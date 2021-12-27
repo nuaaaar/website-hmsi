@@ -5,6 +5,9 @@
         .itk-text{
             font-size: 16px;
         }
+        .card-post{
+            height: 320px !important;
+        }
     </style>
 @endsection
 
@@ -101,14 +104,16 @@
                         @foreach ($posts as $post)
                             <div class="item">
                                 <a href="{{ $post->url }}" target="_blank" class="text-dark">
-                                    <div class="card">
+                                    <div class="card card-post">
                                         <div class="card-img-top text-center justify-content-center" style="height: 160px; overflow: hidden !important">
                                             <img src="{{ $post->thumbnail }}" alt="Card image cap" class="mx-auto" style="height: 160px; width: auto !important;">
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-text">{{ Str::limit($post->title, 50)}}</p>
-                                            <p class="card-text"><small class="text-muted">{{ date('Y-m-d',
-                                                    strtotime($post->updated_at)) }}</small></p>
+                                            <div class="d-flex flex-column justify-content-between h-100">
+                                                <p class="card-text">{{ Str::limit($post->title, 50)}}</p>
+                                                <p class="card-text"><small class="text-muted">{{ date('Y-m-d',
+                                                        strtotime($post->updated_at)) }}</small></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
@@ -117,7 +122,7 @@
                     </div>
                 @else
                     <div class="w-100 text-center my-4">
-                        <img src="/app-assets/images/icon/empty.png" height="256px" class="text-center">
+                        <img src="/app-assets/images/icon/empty.png" height="320px" class="text-center">
                         <p class="text-muted">Belum ada data tersedia</p>
                     </div>
                 @endif

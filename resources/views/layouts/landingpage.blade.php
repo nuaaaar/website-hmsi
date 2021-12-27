@@ -149,8 +149,13 @@
                             nav:true,
                             loop:false
                         },
+                        1440: {
+                            items:5,
+                            nav:true,
+                            loop:false
+                        },
                         1920: {
-                            items:8,
+                            items:6,
                             nav:true,
                             loop:false
                         }
