@@ -20,13 +20,13 @@ class AboutController extends Controller
 
         if ($about == null) {
             About::create([
-                'hmsi_profile' => $request->hmsi_profile,
-                'hmsi_vision_and_mission' => $request->hmsi_vision_and_mission,
+                'hmsi_profile' => $request->hmsi_profile ?? '',
+                'hmsi_vision_and_mission' => $request->hmsi_vision_and_mission ?? '',
             ]);
         }else{
             $about->update([
-                'hmsi_profile' => $request->hmsi_profile,
-                'hmsi_vision_and_mission' => $request->hmsi_vision_and_mission,
+                'hmsi_profile' => $request->hmsi_profile ?? '',
+                'hmsi_vision_and_mission' => $request->hmsi_vision_and_mission ?? '',
             ]);
         }
 
